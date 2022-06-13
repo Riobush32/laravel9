@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/createproduct', function () {
+    return view('admin.createProduct');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
