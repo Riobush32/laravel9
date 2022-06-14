@@ -13,7 +13,8 @@
                     </div>
                 </div>
                 <div class="mt-5 md:mt-0 md:col-span-2">
-                    <form action="#" method="POST">
+                    <form action="{{ url('/product') }}" method="POST">
+                        @csrf
                         <div class="shadow sm:rounded-md sm:overflow-hidden">
                             <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
                                 {{-- title --}}
@@ -52,10 +53,10 @@
 
                                 {{-- description --}}
                                 <div>
-                                    <label for="description" class="block text-sm font-medium text-gray-700">
+                                    <label for="descriptions" class="block text-sm font-medium text-gray-700">
                                         Description </label>
                                     <div class="mt-1">
-                                        <textarea id="description" name="description" rows="3"
+                                        <textarea id="descriptions" name="descriptions" rows="3"
                                             class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
                                             placeholder="write a description here"></textarea>
                                     </div>
@@ -63,8 +64,21 @@
                                         hyperlinked.</p>
                                 </div>
 
+
+                                {{-- stock --}}
+                                <div class="grid grid-cols-3 gap-6">
+                                    <div class="col-span-3 sm:col-span-2">
+                                        <div class="col-span-6 sm:col-span-3">
+                                            <label for="title"
+                                                class="block text-sm font-medium text-gray-700">stock</label>
+                                            <input type="number" name="stock" id="stock"
+                                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                        </div>
+                                    </div>
+                                </div>
+
                                 {{-- image --}}
-                                <div>
+                                {{-- <div>
                                     <label class="block text-sm font-medium text-gray-700"> Product Image </label>
                                     <div
                                         class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
@@ -86,7 +100,7 @@
                                             <p class="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
                                 <button type="submit"
@@ -111,8 +125,10 @@
 
 <hr>
 
+{{-- <livewire:product-index></livewire:product-index> --}}
+
 <div class="p-5 h-screen bg-gray-100">
-    <h1 class="text-xl mb-2">Your Order</h1>
+    {{-- <h1 class="text-xl mb-2">Your Order</h1>
 
     <div class="overflow-auto rounded-lg shadow hidden md:block">
         <table class="w-full">
@@ -190,9 +206,9 @@
                 </tr>
             </tbody>
         </table>
-    </div>
+    </div> --}}
 
-    {{-- the second  --}}
+    {{-- the second 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden">
         <div class="bg-white space-y-2 p-4 rounded-lg shadow">
             <div class="flex items-center space-x-2 text-sm">
@@ -244,7 +260,7 @@
             <div class="text-sm text-gray-800">Lorem ipsum dolor sit amet.</div>
             <div class="text-sm font-bold text-black">Rp 200.000,00</div>
         </div>
-    </div>
+    </div> --}}
 
     
 </div>
