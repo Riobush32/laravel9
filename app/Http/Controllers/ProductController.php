@@ -35,15 +35,26 @@ class ProductController extends Controller
 
     public function store(Request $re) 
     {
+        if($re->file('image')){
             Product::create([
                 'id' => $re->id,
                 'title' => $re->title,
                 'price' => $re->price,
                 'descriptions' => $re->descriptions,
                 'stock' => $re->stock,
-                
-
+                'image' => $re->file('image')->store('product-image'),
             ]);
+        }else{
+            Product::create([
+                'id' => $re->id,
+                'title' => $re->title,
+                'price' => $re->price,
+                'descriptions' => $re->descriptions,
+                'stock' => $re->stock,
+            ]);
+        }
+
+
 
             return redirect('/product');
 
@@ -82,6 +93,17 @@ class ProductController extends Controller
 
         $products->delete();
 
-        return 'success';
+        return redirect('/product');
+    }
+
+    //shop 
+
+    public function shopView(Request $re)
+    {
+        $products = Product::all();
+
+        return view('product.view', [
+            'data' => $products
+        ]);
     }
 }

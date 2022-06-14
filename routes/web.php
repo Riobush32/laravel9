@@ -26,7 +26,11 @@ Route::get('/product/{$id}', [ProductController::class, 'show']);
 Route::post('/product', [ProductController::class, 'store']);
 Route::get('/product/{id}/edit', [ProductController::class, 'edit']);
 Route::patch('/product/{id}', [ProductController::class, 'update']);
-Route::delete('product/{$id}', [ProductController::class, 'delete']);
+Route::delete('product/{id}', [ProductController::class, 'destroy']);
+
+//product viewer
+
+Route::get('/shop', [ProductController::class, 'shopView']);
 
 // Route::get('/createproduct', function () {
 //     return view('admin.createProduct');

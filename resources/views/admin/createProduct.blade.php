@@ -13,7 +13,7 @@
                     </div>
                 </div>
                 <div class="mt-5 md:mt-0 md:col-span-2">
-                    <form action="{{ url('/product') }}" method="POST">
+                    <form action="{{ url('/product') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="shadow sm:rounded-md sm:overflow-hidden">
                             <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
@@ -78,7 +78,7 @@
                                 </div>
 
                                 {{-- image --}}
-                                {{-- <div>
+                                <div>
                                     <label class="block text-sm font-medium text-gray-700"> Product Image </label>
                                     <div
                                         class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
@@ -100,7 +100,7 @@
                                             <p class="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
                                         </div>
                                     </div>
-                                </div> --}}
+                                </div>
                             </div>
                             <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
                                 <button type="submit"
