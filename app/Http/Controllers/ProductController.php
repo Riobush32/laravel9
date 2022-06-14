@@ -12,7 +12,7 @@ class ProductController extends Controller
     {
         // $if ($re->search)
         // {
-        //     $products = Product::where('title', 'LIKE', "%$re->search%"->get();
+        //     $products = Product::where('title', 'LIKE', '%$re->search%')->get();
 
         //     return view('admin.productIndex', [
         //         'data' => $products
@@ -36,21 +36,30 @@ class ProductController extends Controller
     public function store(Request $re) 
     {
             Product::create([
+                'id' => $re->id,
                 'title' => $re->title,
                 'price' => $re->price,
                 'descriptions' => $re->descriptions,
                 'stock' => $re->stock,
+                
 
             ]);
 
             return redirect('/product');
 
-        }
+    }
 
     public function show($id)
     {
         $products = Product::find($id);
         return $products;
+    }
+
+    public function edit($id)
+    {
+        $products = Product::find($id);
+
+        return view('admin.editProduct', compact('products'));
     }
 
     public function update(Request $re, $id)
@@ -64,7 +73,7 @@ class ProductController extends Controller
             'stock' => $re->stock,
         ]);
 
-        return $products;
+        return redirect('/product');
     }
 
     public function destroy(Request $re, $id)

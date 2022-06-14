@@ -58,10 +58,10 @@
                     </td>
                     <td class="whitespace-nowrap p-3 text-sm text-gray-700">
 
-                        <button type="submit"
+                        <a href="{{ url('/product/'.$item->id.'/edit') }}"
                             class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-violet-600 hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-500">
                             Edit
-                        </button>
+                        </a>
 
                         <button type="submit"
                             class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-rose-600 hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500">
@@ -98,9 +98,10 @@
                 </div>
             </div>
             <div class="text-sm text-gray-800">{{ $item->descriptions }}.</div>
-            <div class="text-sm font-bold text-black">Rp {{ $item->price }}</div>
+            <div class="text-sm font-bold text-black">Rp {{ $item->id }} </div>
             <div class="">
-                <a type="submit"
+                
+                <a href="{{ url('/product/$item->id/edit') }}"
                     class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-amber-600 hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500">
                     edit
                 </a>
