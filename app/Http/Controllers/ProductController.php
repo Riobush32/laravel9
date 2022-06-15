@@ -96,6 +96,17 @@ class ProductController extends Controller
         return redirect('/product');
     }
 
+    //bannner 
+
+    public function banner(Request $re)
+    {
+        $products = Product::paginate(2);
+
+        return view('home', [
+            'data' => $products
+        ]);
+    }
+
     //shop 
 
     public function shopView(Request $re)
@@ -103,6 +114,15 @@ class ProductController extends Controller
         $products = Product::all();
 
         return view('product.view', [
+            'data' => $products
+        ]);
+    }
+
+    public function viewer(Request $re, $id)
+    {
+        $products = Product::find($id);
+
+        return view('product.detail', [
             'data' => $products
         ]);
     }

@@ -62,14 +62,17 @@
     <div class="w-full bg-emerald-800 md:flex md:py-10">
         <div class="container w-1/2 flex md:py-10 md:justify-start md:ml-10">
             
-{{-- 
+
             @foreach($data as $item)
-            <a href="{{ url('pesan')}}/{{ $item->id }}"class="w-1/2 container md:w-52 md:h-[270px] flex flex-col md:mx-10 md:rounded-md bg-smoot md:px-6 items-center hover:animate-pulse">
-                <img src="{{ asset('img/' . $item->image) }}" alt="product-1" width="250px">
+            <a href="{{ url('pesan')}}/{{ $item->id }}"class="w-1/2 container md:w-52 md:h-[270px] flex flex-col md:mx-10 md:rounded-md bg-white md:px-6 items-center hover:animate-pulse">
+                
+                <div class="w-[90% p-2 m-2]">
+                    <img src="{{ asset('storage/' . $item->image) }}" alt="product-1" width="250px">
+                </div>
                 <h2 class="font-semibold text-emerald-800">Rp {{ $item->price }}</h2>
                 <h4 class="font-semibold text-md text-dark inline-block mx-auto">{{ $item->title }}</h4>
             </a>
-            @endforeach --}}
+            @endforeach
             
             
         </div>

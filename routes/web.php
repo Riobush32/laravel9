@@ -14,9 +14,7 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [ProductController::class, 'banner']);
 
 // product route 
 
@@ -31,6 +29,11 @@ Route::delete('product/{id}', [ProductController::class, 'destroy']);
 //product viewer
 
 Route::get('/shop', [ProductController::class, 'shopView']);
+Route::get('/view/{id}', [ProductController::class, 'viewer']);
+
+Route::get('/cart', function () {
+    return view('product.cart');
+});
 
 // Route::get('/createproduct', function () {
 //     return view('admin.createProduct');

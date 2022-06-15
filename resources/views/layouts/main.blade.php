@@ -12,6 +12,7 @@
 
     {{-- tailwindcss  --}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/my.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -38,11 +39,11 @@
                         class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[500px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
                         <ul class="blok lg:flex">
                             <li class="group">
-                                <a href="#home"
+                                <a href="{{ url('/') }}"
                                     class="text-base flex text-dark py-2 mx-8 group-hover:text-primary">Home</a>
                             </li>
                             <li class="group">
-                                <a href="#about"
+                                <a href="{{ url('/shop') }}"
                                     class="text-base flex text-dark py-2 mx-8 group-hover:text-primary">Shop</a>
                             </li>
 

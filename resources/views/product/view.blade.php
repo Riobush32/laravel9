@@ -1,6 +1,6 @@
-@extends('adminComponens.navComponen')
+@extends('layouts.main')
 
-@section('content3')
+@section('content2')
 
 <!--
   This example requires Tailwind CSS v2.0+ 
@@ -25,7 +25,7 @@
         <div class="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
 
             @foreach ($data as $item)
-            <a href="#" class="group">
+            <a href="{{ url('/view/'.$item->id) }}" class="group">
                 <div
                     class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
                     <img src="{{ asset('storage/'.$item->image) }}"
@@ -36,12 +36,19 @@
                 <p class="mt-1 text-lg font-medium text-gray-900">Rp {{ $item->price }}</p>
             </a>
 
+
+
             @endforeach
 
             <!-- More products... -->
         </div>
     </div>
 </div>
+
+
+{{-- toogle --}}
+
+
 
 
 @endsection
