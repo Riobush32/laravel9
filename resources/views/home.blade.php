@@ -64,7 +64,7 @@
             
 
             @foreach($data as $item)
-            <a href="{{ url('pesan')}}/{{ $item->id }}"class="w-1/2 container md:w-52 md:h-[270px] flex flex-col md:mx-10 md:rounded-md bg-white md:px-6 items-center hover:animate-pulse">
+            <a href="{{ url('/view')}}/{{ $item->id }}"class="w-1/2 container md:w-52 md:h-[270px] flex flex-col md:mx-10 md:rounded-md bg-white md:px-6 items-center hover:animate-pulse">
                 
                 <div class="w-[90% p-2 m-2]">
                     <img src="{{ asset('storage/' . $item->image) }}" alt="product-1" width="250px">

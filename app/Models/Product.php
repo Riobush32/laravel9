@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Cart;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Product extends Model
 {
@@ -11,4 +12,11 @@ class Product extends Model
 
     // protect guarded digunakan untuk bisa menginputkan data 
     protected $guarded = [];
+
+    // public function cart()
+    // {
+    //     return $this->hasMany(Cart::class);
+    // }
+
+    
 }

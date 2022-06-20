@@ -79,7 +79,7 @@
 
                 <li class="group">
                     
-                    <a href="{{ url('/dashboard') }}"
+                    <a href="{{ url('/pesanan/'.Auth::user()->id) }}"
                         class="w-10 h-10 p-[5px] bg-amber-400 items-center justify-center rounded-md block">
                         <svg role="img" width="25px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <title>Shopify</title>
