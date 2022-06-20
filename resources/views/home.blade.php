@@ -25,7 +25,7 @@
                 <div class="w-1/2">
                     <p class="font-base text-sm text-secondary mb-10 mt-[15px] md:max-w-xs">Beragam jajanan Khas Indonesia Tersedia DiSini </p>
 
-                    <a href="#"
+                    <a href="{{ url('/shop') }}"
                         class="text-base font-semibold mt-5 text-white bg-primary py-3 px-8 rounded-md hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Mulai
                         Belanja</a>
                 </div>

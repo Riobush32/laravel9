@@ -36,9 +36,11 @@ Route::get('/view/{id}', [ProductController::class, 'viewer']);
 
 Route::post('/carts', [CartController::class, 'store']);
 Route::get('/pesanan/{userid}', [CartController::class, 'index']);
+Route::get('cart/{id}/{productid}', [CartController::class, 'check']);
+Route::delete('cart/{id}', [CartController::class, 'destroy']);
 
 Route::get('/cart', function () {
-    return view('product.cart');
+    return view('product.detailPesanan');
 });
 
 

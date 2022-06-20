@@ -12,30 +12,30 @@
             <div class="w-[90%]">
                 <div class="rounded border shadow-lg p-2 flex">
                     <div class="w-1/2 rounded overflow-hidden flex justify-center items-center">
-                        <img src="https://cdn.pixabay.com/photo/2017/11/03/08/57/spider-2913761_960_720.jpg" alt="" width="150px">
+                        <img src="{{ asset('storage/'.$product->image) }}" alt="" width="150px">
                     </div>
                     <div class="w-1/2 flex">
                         <div class="" style="width:300px;">
                             <div style="margin-top:20px">
                                 <span class="font-semibold text-lg text-black">
-                                    Kripik
+                                    {{ $product->title }}
                                 </span>
                             </div>
                             <div style="margin-top:20px">
                                 <span>
-                                    Rp 20000
+                                    Rp {{ $product->price }}
                                 </span>
                             </div>
                             <div style="margin-top:20px">
                                 <p>Jumlah Pesanan: <span>
-                                    20
+                                    {{ $cart->jumlah }}
                                 </span></p>
                                 
                             </div>
 
                             <div style="margin-top:20px">
                                 <p>Total Harga: <span>
-                                    Rp 40000
+                                    Rp {{ $cart->jumlah*$product->price }}
                                 </span></p>
                                 
                             </div>
@@ -54,7 +54,7 @@
                 <div class="md:col-span-1">
                     <div class="px-4 sm:px-0">
                         <h3 class="text-lg font-medium leading-6 text-gray-900">Personal Information</h3>
-                        <p class="mt-1 text-sm text-gray-600">Use a permanent address where you can receive mail.</p>
+                        <p class="mt-1 text-sm text-gray-600">Make sure your address is valid data</p>
                     </div>
                 </div>
                 <div class="mt-5 md:mt-0 md:col-span-2">
@@ -77,22 +77,12 @@
                                     </div>
 
                                     <div class="col-span-6 sm:col-span-4">
-                                        <label for="email-address" class="block text-sm font-medium text-gray-700">Email
-                                            address</label>
-                                        <input type="text" name="email-address" id="email-address" autocomplete="email"
+                                        <label for="email-address" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                                        <input type="text" name="email-address" id="email-address" autocomplete="email" placeholder="+62-812-3456-7890"
                                             class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
                                     </div>
 
-                                    <div class="col-span-6 sm:col-span-3">
-                                        <label for="country"
-                                            class="block text-sm font-medium text-gray-700">Country</label>
-                                        <select id="country" name="country" autocomplete="country-name"
-                                            class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                            <option>United States</option>
-                                            <option>Canada</option>
-                                            <option>Mexico</option>
-                                        </select>
-                                    </div>
+                                   
 
                                     <div class="col-span-6">
                                         <label for="street-address"
@@ -142,6 +132,7 @@
 
     </div>
 </div>
+
 
 
 @endsection

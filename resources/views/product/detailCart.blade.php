@@ -68,16 +68,19 @@
                         {{ $tot }}
                     </td>
                     <td>
+                        <form action="{{ url('/cart/'.$item->id) }}" method="POST">
+                            @csrf @method('DELETE')
 
-                        <a href=""
-                            class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-violet-600 hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-500">
-                            Beli
-                        </a>
+                            <a href="{{ url('/cart/'.$item->id.'/'.$idpro) }}"
+                                class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-violet-600 hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-500">
+                                Beli
+                            </a>
 
-                        <button type="submit"
-                            class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-rose-600 hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500">
-                            Hapus
-                        </button>
+                            <button type="submit"
+                                class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-rose-600 hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500">
+                                Hapus
+                            </button>
+                        </form>
                     </td>
                     <?php $no++; ?>
                 </tr>

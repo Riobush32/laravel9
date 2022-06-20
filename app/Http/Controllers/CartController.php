@@ -34,6 +34,17 @@ class CartController extends Controller
         
     }
 
+    public function check(Request $re, $id, $productid)
+    {
+        $cart = Cart::find($id);
+        $product = Product::find($productid);
+
+        return view('product.detailPesanan', [
+            'cart' => $cart,
+            'product' => $product
+        ]);
+    }
+
     public function store(Request $re) 
     {
         if($re->userid != '')
@@ -54,6 +65,14 @@ class CartController extends Controller
         }
         
 
+    }
+
+    public function destroy(Request $re, $id)
+    {
+        $cart = Cart::find($id);
+        $user = $cart->userid;
+        $cart->delete();
+        return redirect('/pesanan/'.$user);
     }
 
 }
