@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('userid');
             $table->integer('cartid');
+            $table->integer('productid');
             $table->string('first_name');
             $table->string('last_name');
             $table->string('phone');
@@ -24,6 +25,8 @@ return new class extends Migration
             $table->string('city');
             $table->string('street');
             $table->string('postal_code');
+            $table->integer('status');
+            $table->integer('jumlah');
             $table->timestamps();
         });
     }

@@ -1,6 +1,6 @@
-@extends('adminComponens.navComponen')
+@extends('layouts.main')
 
-@section('content3')
+@section('content2')
 
 <div class="p-5 h-screen bg-gray-100 p-20">
     <div class="grid grid-flow-col auto-cols-max gap-4 mb-4">

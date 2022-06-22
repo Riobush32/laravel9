@@ -31,4 +31,15 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'midtrans' => [
+        //Merchant Server Key
+        'serverKey' => env('MIDTRANS_SERVERKEY'),
+        // Midtrans Client Key
+        'clientKey' => env('MIDTRANS_CLIENTKEY'),
+        // Isi false jika masih tahap devlopment dan true jika sudah tahap production
+        'isProduction' => env('MIDTRANS_IS_PDODUCTION', false),
+        'isSanitized'  => env('MIDTRANS_IS_SANITIZED', true),
+        'is3ds' => env('MIDTRANS_IS_3DS', true),
+    ],
+
 ];

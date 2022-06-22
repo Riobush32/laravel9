@@ -50,6 +50,20 @@
                             @if (Route::has('login'))
                             @auth
                             <li class="group">
+                                <a href="{{ url('/pesan/'.Auth::user()->id) }}"
+                                    class="text-base flex text-dark py-2 mx-8 group-hover:text-primary">Pesanan</a>
+                            </li>
+                                @if (Auth::user()->email == 'riobush32@gmail.com')
+                                <li class="group">
+                                    <a href="{{ url('/admin/order') }}"
+                                        class="text-base flex text-dark py-2 mx-8 group-hover:text-primary">Orderan</a>
+                                </li>
+                                <li class="group">
+                                    <a href="{{ url('/product') }}"
+                                        class="text-base flex text-dark py-2 mx-8 group-hover:text-primary">Product</a>
+                                </li>
+                                @endif
+                            <li class="group">
                                 <div x-data="{open: false}">
                                     <button x-on:click="open = !open"
                                         class="text-base flex text-dark py-2 mx-8 group-hover:text-primary">
@@ -76,7 +90,7 @@
                 </div>
 
                 </li>
-
+                
                 <li class="group">
                     
                     <a href="{{ url('/pesanan/'.Auth::user()->id) }}"
@@ -124,6 +138,8 @@
 
     <script src="{{ asset('js/script.js') }}"></script>
 
+    
+    </body>
 </body>
 
 </html>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 
 /*
@@ -38,6 +39,22 @@ Route::post('/carts', [CartController::class, 'store']);
 Route::get('/pesanan/{userid}', [CartController::class, 'index']);
 Route::get('cart/{id}/{productid}', [CartController::class, 'check']);
 Route::delete('cart/{id}', [CartController::class, 'destroy']);
+
+
+//orders 
+Route::get('/orders', [OrderController::class, 'index']);
+Route::post('/orders', [OrderController::class, 'store']);
+Route::get('clear/{id}/{param}/{sisa}/{product}', [OrderController::class, 'destroy']);
+Route::get('/pesan/{userid}', [OrderController::class, 'pesanan']);
+
+Route::get('/status/{id}/user', [OrderController::class, 'userStatus']);
+Route::patch('/status/{id}/user', [OrderController::class, 'userStatusUpdate']);
+
+Route::get('/admin/order', [OrderController::class, 'adminOrder']);
+Route::get('/status/{id}/', [OrderController::class, 'statusEdit']);
+Route::patch('/status/{id}/edit', [OrderController::class, 'statusUpdate']);
+
+
 
 Route::get('/cart', function () {
     return view('product.detailPesanan');
